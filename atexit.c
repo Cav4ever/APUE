@@ -10,7 +10,7 @@ int main()
 {
     printf("start\n");
     if (atexit(fun) != 0){
-        perror("Failed in fun:");
+        perror("Failed in atexit:");
     }
     else {
         printf("continue\n");
