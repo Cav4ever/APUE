@@ -17,6 +17,8 @@ int main()
     }
 
     signal(SIGINT, funSignal);
+    //signal(SIGKILL, funSignal);
+    signal(SIGTERM, funSignal);
     //fflush(stdout);
     sleep(20);
 
@@ -32,6 +34,12 @@ void funSignal(int sigNum)
 {
     if (SIGINT == sigNum) {
         printf("end by Ctrl + C\n");
+    }
+    //else if (SIGKILL ==  sigNum) {//SIGKILL can't be ignored and handlering
+    //    printf("end by kill -9\n");
+    //}
+    else if (SIGTERM ==  sigNum) {
+        printf("end by SIGTERM kill -15\n");
     }
     exit(1);
 }
