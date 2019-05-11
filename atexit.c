@@ -33,5 +33,5 @@ void funSignal(int sigNum)
     if (SIGINT == sigNum) {
         printf("end by Ctrl + C\n");
     }
-
+    exit(1);
 }
